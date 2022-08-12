@@ -1,6 +1,8 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'package:game_island/hero.dart';
 
+const double tileSize = 32;
 void main() {
   runApp(const MyApp());
 }
@@ -33,9 +35,10 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       map: TiledWorldMap(
-        'map/island.json',
-        forceTileSize: const Size(32, 32),
+        'map/island.tmj',
+        forceTileSize: const Size(tileSize, tileSize),
       ),
+      player: GameHero(Vector2(18 * tileSize, 14 * tileSize)),
     );
   }
 }
