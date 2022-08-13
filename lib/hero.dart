@@ -1,7 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:game_island/game_sprite_sheet.dart';
 
-class GameHero extends SimplePlayer {
+class GameHero extends SimplePlayer with ObjectCollision {
   GameHero(Vector2 position)
       : super(
           position: position,
@@ -13,5 +13,16 @@ class GameHero extends SimplePlayer {
             runRight: GameSpriteSheet.heroRunRight,
           ),
           speed: 60,
-        );
+        ) {
+    setupCollision(
+      CollisionConfig(
+        collisions: [
+          CollisionArea.rectangle(
+            size: Vector2(20, 20),
+            align: Vector2(9, 20),
+          ),
+        ],
+      ),
+    );
+  }
 }
