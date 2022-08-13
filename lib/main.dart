@@ -1,6 +1,7 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
 import 'package:game_island/hero.dart';
+import 'package:game_island/orc.dart';
 
 const double tileSize = 16;
 void main() {
@@ -36,6 +37,9 @@ class MyHomePage extends StatelessWidget {
       ),
       map: TiledWorldMap(
         'map/island.tmj',
+        objectsBuilder: {
+          'orc': (properties) => Orc(properties.position),
+        },
       ),
       player: GameHero(
         Vector2(18 * tileSize, 14 * tileSize),
