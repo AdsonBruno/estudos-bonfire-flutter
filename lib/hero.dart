@@ -1,5 +1,5 @@
 import 'package:bonfire/bonfire.dart';
-import 'package:game_island/game_sprite_sheet.dart';
+import 'package:game_island/player_sprite_sheet.dart';
 import 'package:game_island/main.dart';
 
 class GameHero extends SimplePlayer with ObjectCollision {
@@ -8,10 +8,10 @@ class GameHero extends SimplePlayer with ObjectCollision {
           position: position,
           size: Vector2(tileSize, tileSize),
           animation: SimpleDirectionAnimation(
-            idleLeft: GameSpriteSheet.heroIdLeft,
-            idleRight: GameSpriteSheet.heroIdRight,
-            runLeft: GameSpriteSheet.heroRunLeft,
-            runRight: GameSpriteSheet.heroRunRight,
+            idleLeft: PlayerSpriteSheet.heroIdLeft,
+            idleRight: PlayerSpriteSheet.heroIdRight,
+            runLeft: PlayerSpriteSheet.heroRunLeft,
+            runRight: PlayerSpriteSheet.heroRunRight,
           ),
           speed: 50,
         ) {
